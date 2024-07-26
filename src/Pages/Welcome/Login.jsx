@@ -4,7 +4,7 @@ import { useAppContext } from '../../context/state';
 import { login } from '../../data/auth';
 
 const Login = () => {
-  const { setToken } = useAppContext();
+  const { setToken, setUserId } = useAppContext();
   const usernameRef = useRef('');
   const passwordRef = useRef('');
   const navigate = useNavigate();
@@ -18,10 +18,10 @@ const Login = () => {
 
     try {
       const res = await login(user);
-      console.log('Response from login:', res); // Log the response to see its content
       if (res && res.valid) {
         setToken(res.token);
-        navigate('/'); // Navigate to the desired page after login
+        setUserId(res.id);
+        navigate('/my-trips'); // Navigate to the desired page after login
       } else {
         alert('Invalid login credentials');
       }

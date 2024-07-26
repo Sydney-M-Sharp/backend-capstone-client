@@ -1,8 +1,7 @@
 // data/auth.js
 export const login = async (user) => {
-  debugger
+
   try {
-    debugger
     const response = await fetch('http://localhost:8000/login', { // Full URL
       method: 'POST',
       headers: {
