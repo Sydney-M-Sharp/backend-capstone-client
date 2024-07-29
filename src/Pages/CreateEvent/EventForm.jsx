@@ -1,61 +1,80 @@
 import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { createEvent } from '../../data/events.js';
+import { useAppContext } from '../../context/state';
 
-function CreateEventForm({ onSubmit, initialData = {} }) {
-  const [title, setTitle] = useState(initialData.title || '');
-  const [location, setLocation] = useState(initialData.location || '');
-  const [date, setDate] = useState(initialData.date || '');
-  const [time, setTime] = useState(initialData.time || '');
-  const [description, setDescription] = useState(initialData.description || '');
-  const [link, setLink] = useState(initialData.link || '');
-  const [trip, setTrip] = useState(initialData.trip || '');
+const CreateEventForm = () => {
+    const { tripId } = useParams(); // Get the tripId from the URL
+    const { token } = useAppContext(); // Get the token from context
+    const navigate = useNavigate(); // To programmatically navigate after saving
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const eventData = {
-      title,
-      location,
-      date,
-      time,
-      description,
-      link,
-      trip,
+    const [eventDetails, setEventDetails] = useState({
+        title: '',
+        location: '',
+        date: '',
+        time: '',
+        description: '',
+        link: '',
+        trip: tripId // Initialize with the trip ID
+    });
+    const [error, setError] = useState(null);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setEventDetails(prevDetails => ({
+            ...prevDetails,
+            [name]: value
+        }));
     };
-    onSubmit(eventData);
-  };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Title:</label>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
-      </div>
-      <div>
-        <label>Location:</label>
-        <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} required />
-      </div>
-      <div>
-        <label>Date:</label>
-        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-      </div>
-      <div>
-        <label>Time:</label>
-        <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
-      </div>
-      <div>
-        <label>Description:</label>
-        <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
-      </div>
-      <div>
-        <label>Link:</label>
-        <input type="url" value={link} onChange={(e) => setLink(e.target.value)} />
-      </div>
-      <div>
-        <label>Trip:</label>
-        <input type="text" value={trip} onChange={(e) => setTrip(e.target.value)} required />
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-  );
-}
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await createEvent(eventDetails, token);
+            navigate(`/trip-details/${tripId}`); // Redirect to trip details page after saving
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
+    const handleCancel = () => {
+        navigate(`/trip-details/${tripId}`); // Redirect to trip details page without saving
+    };
+
+    return (
+        <div>
+            {error && <p>Error: {error}</p>}
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Title:</label>
+                    <input type="text" name="title" value={eventDetails.title} onChange={handleChange} />
+                </div>
+                <div>
+                    <label>Location:</label>
+                    <input type="text" name="location" value={eventDetails.location} onChange={handleChange} />
+                </div>
+                <div>
+                    <label>Date:</label>
+                    <input type="date" name="date" value={eventDetails.date} onChange={handleChange} />
+                </div>
+                <div>
+                    <label>Time:</label>
+                    <input type="time" name="time" value={eventDetails.time} onChange={handleChange} />
+                </div>
+                <div>
+                    <label>Description:</label>
+                    <textarea name="description" value={eventDetails.description} onChange={handleChange}></textarea>
+                </div>
+                <div>
+                    <label>Link:</label>
+                    <input type="text" name="link" value={eventDetails.link} onChange={handleChange} />
+                </div>
+                <button type="submit">Create Event</button>
+                <button type="button" onClick={handleCancel}>Cancel</button>
+            </form>
+        </div>
+    );
+};
 
 export default CreateEventForm;
+
