@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getEventsByTripID } from '../../data/events.js';
+import { getEventsByTripID, deleteEventByID } from '../../data/events.js';
 import { useAppContext } from '../../context/state';
 import { convertTo12HourFormat } from '../../Components/Time.jsx';
+
+// Function to format date to MM/DD/YYYY
+const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const month = date.getMonth() + 1; // Months are zero-based
+    const day = date.getDate();
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+};
 
 const TripDetails = () => {
     const { tripId } = useParams(); // Get the tripId from the URL
@@ -55,24 +64,46 @@ const TripDetails = () => {
         navigate(`/edit-event/${eventId}`);
     };
 
+    const handleCreateEventClick = () => {
+        navigate(`/create-event/${tripId}`); // Adjust the path as needed
+    };
+
+    const handleDeleteClick = async (eventId) => {
+        if (window.confirm("Are you sure you want to delete this event?")) {
+            try {
+                await deleteEventByID(eventId, token);
+                // Filter out the deleted event from the state
+                setTripEvents(tripEvents.filter(event => event.id !== eventId));
+                setError(null); // Clear the error if deletion is successful
+            } catch (error) {
+                setError('Failed to delete the event'); // Set error if deletion fails
+            }
+        }
+    };
+    
+    
+
     return (
         <div>
             <h1>Trip Details</h1>
+            <button onClick={handleCreateEventClick}>Create New Event</button>
             {tripEvents.length > 0 ? (
                 <ul>
                     {tripEvents.map(event => (
                         <li key={event.id}>
-                            {console.log("userID", userId, "event user", event.user.id)}
                             <h2>{event.title}</h2>
                             <p>{event.description}</p>
                             <p>Location: {event.location}</p>
-                            <p>Date: {event.date}</p>
+                            <p>Date: {formatDate(event.date)}</p> {/* Format the date */}
                             <p>Time: {convertTo12HourFormat(event.time)}</p>
                             <p>Link: {event.link}</p>
-                            <p>Event created by: {event.user.first_name} </p>
+                            <p>Event created by: {event.user.first_name}</p>
                             
                             {parseInt(event.user.id) === parseInt(userId) && (
-                                <button onClick={() => handleEditClick(event.id)}>Edit</button>
+                                <>
+                                    <button onClick={() => handleEditClick(event.id)}>Edit</button>
+                                    <button onClick={() => handleDeleteClick(event.id)}>Delete</button>
+                                </>
                             )}
                         </li>
                     ))}

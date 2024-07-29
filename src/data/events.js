@@ -63,3 +63,42 @@ export const updateEventByID = async (eventId, eventData, token) => {
         throw error;
     }
 };
+export const createEvent = async (eventData, token) => {
+    try {
+        const response = await fetch('http://localhost:8000/events', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${token}`
+            },
+            body: JSON.stringify(eventData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error creating event:', error);
+        throw error;
+    }
+};
+export const deleteEventByID = async (eventId, token) => {
+    try {
+        const response = await fetch(`http://localhost:8000/events/${eventId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    } catch (error) {
+        console.error('Error deleting event:', error);
+        throw error; // Rethrow to be caught in handleDeleteClick
+    }
+};
