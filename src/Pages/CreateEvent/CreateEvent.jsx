@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { createEvent } from '../../data/events.js';
 import { useAppContext } from '../../context/state';
 
-const CreateEventPage = () => {
+const CreateEvent = () => {
     const { tripId } = useParams(); // Get the tripId from the URL
     const { token } = useAppContext(); // Get the token from context
     const navigate = useNavigate(); // To programmatically navigate after saving
@@ -28,4 +28,4 @@ const CreateEventPage = () => {
     );
 };
 
-export default CreateEventPage;
+export default CreateEvent;

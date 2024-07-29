@@ -4,7 +4,7 @@ import CreateEvent from './Pages/CreateEvent/CreateEvent.jsx';
 import MyTrips from './Pages/MyTrips/MyTrips.jsx';
 import TripDetails from './Pages/TripDetails/TripDetails.jsx';
 import EditEventPage from './Pages/EditEvent/EditEvent.jsx';
-
+import CreateTrip from './Pages/CreateTrip/CreateTrip.jsx'
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route path="trip-details/:tripId" element={<TripDetails />} />
         <Route path="edit-event/:eventId" element={<EditEventPage />} />
         <Route path="/create-event/:tripId" element={<CreateEvent />} />
+        <Route path="/create-trip" element={<CreateTrip />} />
 
         
 

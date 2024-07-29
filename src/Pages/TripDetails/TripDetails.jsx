@@ -3,15 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getEventsByTripID, deleteEventByID } from '../../data/events.js';
 import { useAppContext } from '../../context/state';
 import { convertTo12HourFormat } from '../../Components/Time.jsx';
-
-// Function to format date to MM/DD/YYYY
-const formatDate = (dateStr) => {
-    const date = new Date(dateStr);
-    const month = date.getMonth() + 1; // Months are zero-based
-    const day = date.getDate();
-    const year = date.getFullYear();
-    return `${month}/${day}/${year}`;
-};
+import {formatDate} from '../../Components/FormatDate.jsx';
 
 const TripDetails = () => {
     const { tripId } = useParams(); // Get the tripId from the URL
