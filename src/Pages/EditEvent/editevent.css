@@ -1,0 +1,99 @@
+/* editevent.css */
+
+/* General styles for the edit event page */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.page-header {
+    background-color: #547258; 
+    color: white; 
+    text-align: center;
+    width: 100%;
+    max-width: 1000px; /* Adjusted width */
+    border-bottom-left-radius: 30px; 
+    border-bottom-right-radius: 30px; 
+    padding: 10px;
+    margin-bottom: 20px; /* Add space below the header */
+}
+
+/* Style for the form container */
+.section-container {
+    background-color: #9dbbae; /* Green background */
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px; /* Padding inside the box */
+    width: 100%; /* Full width inside container */
+    max-width: 600px; /* Maximum width of the form box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better visibility */
+}
+
+/* Style for each form group */
+.form-group {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Style for the save button */
+.save-button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: #6c93a9;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.save-button:hover {
+    background-color: #646cff;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 500px) {
+    .section-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+        width: 90%; /* Width of the boxes for smaller screens */
+    }
+
+    .save-button {
+        padding: 0.5em 1em; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Mobile-specific styles for small window */
+@media (max-width: 320px) {
+    .section-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin: 30px; /* Adjust margin for smaller screens */
+        width: 90%; /* Width of the boxes for smaller screens */
+    }
+
+    .save-button {
+        padding: 0.5em 1em; /* Adjust padding for smaller screens */
+    }
+}

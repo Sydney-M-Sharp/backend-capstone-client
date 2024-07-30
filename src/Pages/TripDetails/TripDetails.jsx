@@ -3,7 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getEventsByTripID, deleteEventByID } from '../../data/events.js';
 import { useAppContext } from '../../context/state';
 import { convertTo12HourFormat } from '../../Components/Time.jsx';
-import {formatDate} from '../../Components/FormatDate.jsx';
+import { formatDate } from '../../Components/FormatDate.jsx';
+import './tripdetails.css'; // Import the CSS file
 
 const TripDetails = () => {
     const { tripId } = useParams(); // Get the tripId from the URL
@@ -72,31 +73,33 @@ const TripDetails = () => {
             }
         }
     };
-    
-    
 
     return (
-        <div>
-            <h1>Trip Details</h1>
-            <button onClick={handleCreateEventClick}>Create New Event</button>
+        <div className="page-container">
+            <header className='page-header'>
+                <h1>Trip Details</h1>
+            </header>
+            <button onClick={handleCreateEventClick} className="create-event-button">Create New Event</button>
             {tripEvents.length > 0 ? (
-                <ul>
+                <ul className="events-list">
                     {tripEvents.map(event => (
-                        <li key={event.id}>
-                            <h2>{event.title}</h2>
-                            <p>{event.description}</p>
-                            <p>Location: {event.location}</p>
-                            <p>Date: {formatDate(event.date)}</p> {/* Format the date */}
-                            <p>Time: {convertTo12HourFormat(event.time)}</p>
-                            <p>Link: {event.link}</p>
-                            <p>Event created by: {event.user.first_name}</p>
-                            
-                            {parseInt(event.user.id) === parseInt(userId) && (
-                                <>
-                                    <button onClick={() => handleEditClick(event.id)}>Edit</button>
-                                    <button onClick={() => handleDeleteClick(event.id)}>Delete</button>
-                                </>
-                            )}
+                        <li key={event.id} className="event-item">
+                            <div className="event-box">
+                                <h2>{event.title}</h2>
+                                <p>{event.description}</p>
+                                <p>Location: {event.location}</p>
+                                <p>Date: {formatDate(event.date)}</p> {/* Format the date */}
+                                <p>Time: {convertTo12HourFormat(event.time)}</p>
+                                <p>Link: {event.link}</p>
+                                <p>Event created by: {event.user.first_name}</p>
+
+                                {parseInt(event.user.id) === parseInt(userId) && (
+                                    <div className="event-actions">
+                                        <button onClick={() => handleEditClick(event.id)} className="edit-button">Edit</button>
+                                        <button onClick={() => handleDeleteClick(event.id)} className="delete-button">Delete</button>
+                                    </div>
+                                )}
+                            </div>
                         </li>
                     ))}
                 </ul>

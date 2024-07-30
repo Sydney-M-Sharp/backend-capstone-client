@@ -1,0 +1,83 @@
+/* mytrips.css */
+
+/* General styles for the trips list */
+.trips-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.trip-item {
+    margin-bottom: 20px;
+}
+
+/* Style for each trip box */
+.trip-box {
+    background-color: #9dbbae; /* Green background */
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better visibility */
+    width: 100%; /* Full width inside container */
+    max-width: 600px; /* Maximum width of the trip box */
+    margin: 0 auto; /* Center the trip box */
+}
+
+.trip-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.trip-details {
+    margin-top: 10px;
+}
+
+.create-trip-button {
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: #1a1a1a;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.create-trip-button:hover {
+    background-color: #646cff;
+}
+
+/* Centering the page container on the page */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 500px) {
+    .trip-box {
+        padding: 15px; /* Adjust padding for smaller screens */
+        width: 90%; /* Width of the boxes for smaller screens */
+    }
+
+    .create-trip-button {
+        padding: 0.5em 1em; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Mobile-specific styles for small window */
+@media (max-width: 320px) {
+    .trip-box {
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin: 30px; /* Adjust margin for smaller screens */
+        width: 90%; /* Width of the boxes for smaller screens */
+    }
+
+    .create-trip-button {
+        padding: 0.5em 1em; /* Adjust padding for smaller screens */
+    }
+}

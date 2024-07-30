@@ -3,6 +3,7 @@ import { useAppContext } from '../../context/state';
 import { getTrips } from '../../data/trips.js';
 import { Link, useNavigate } from 'react-router-dom';
 import { formatDate } from '../../Components/FormatDate.jsx';
+import './mytrips.css'; // Import the CSS file
 
 const MyTrips = () => {
     const { userId, token } = useAppContext();
@@ -20,32 +21,38 @@ const MyTrips = () => {
         fetchTrips();
     }, [userId, token]);
 
-    
-
     return (
-        <div>
-            <h1>My Trips</h1>
-            <button onClick={() => navigate('/create-trip')}>Create New Trip</button>
+        <div className="page-container">
+            <header className='page-header'>
+                <h1>My Trips</h1>
+            </header>
+
             {trips.length > 0 ? (
-                <ul>
+                <ul className="trips-list">
                     {trips.map(trip => (
-                        <li key={trip.id}>
-                            <Link to={`/trip-details/${trip.trip.id}`}>{trip.trip.location}</Link>
-                            <ul>
-                                <li>Start Date: {formatDate(trip.trip.start_date)}</li>
-                                <li>End Date: {formatDate(trip.trip.end_date)}</li>
-                                
-                            </ul>
+                        <li key={trip.id} className="trip-item">
+                            <div className="trip-box">
+                                <Link to={`/trip-details/${trip.trip.id}`} className="trip-link">
+                                    {trip.trip.location}
+                                </Link>
+                                <ul className="trip-details">
+                                    <li>Start Date: {formatDate(trip.trip.start_date)}</li>
+                                    <li>End Date: {formatDate(trip.trip.end_date)}</li>
+                                </ul>
+                            </div>
                         </li>
                     ))}
                 </ul>
             ) : (
                 <p>No trips found.</p>
             )}
+            <button onClick={() => navigate('/create-trip')} className="create-trip-button">Create New Trip</button>
         </div>
     );
 };
 
 export default MyTrips;
+
+
 
 

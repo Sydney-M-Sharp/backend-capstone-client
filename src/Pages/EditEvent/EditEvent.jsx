@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getEventByID, updateEventByID } from '../../data/events.js'; 
 import { useAppContext } from '../../context/state';
+import './editevent.css'; 
 
 const EditEvent = () => {
     const { eventId } = useParams(); // Get the eventId from the URL
@@ -57,35 +58,40 @@ const EditEvent = () => {
     if (error) return <p>Error loading event details: {error}</p>;
 
     return (
-        <div>
-            <h1>Edit Event</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Title:</label>
-                    <input type="text" name="title" value={eventDetails.title || ''} onChange={handleChange} />
-                </div>
-                <div>
-                    <label>Location:</label>
-                    <input type="text" name="location" value={eventDetails.location || ''} onChange={handleChange} />
-                </div>
-                <div>
-                    <label>Date:</label>
-                    <input type="date" name="date" value={eventDetails.date || ''} onChange={handleChange} />
-                </div>
-                <div>
-                    <label>Time:</label>
-                    <input type="time" name="time" value={eventDetails.time || ''} onChange={handleChange} />
-                </div>
-                <div>
-                    <label>Description:</label>
-                    <textarea name="description" value={eventDetails.description || ''} onChange={handleChange}></textarea>
-                </div>
-                <div>
-                    <label>Link:</label>
-                    <input type="link" name="link" value={eventDetails.link || ''} onChange={handleChange} />
-                </div>
-                <button type="submit">Save</button>
-            </form>
+        <div className="page-container">
+            <header className='page-header'>
+                <h1>Edit Event</h1>
+            </header>
+
+            <div className="section-container">
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label>Title:</label>
+                        <input type="text" name="title" value={eventDetails.title || ''} onChange={handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Location:</label>
+                        <input type="text" name="location" value={eventDetails.location || ''} onChange={handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Date:</label>
+                        <input type="date" name="date" value={eventDetails.date || ''} onChange={handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Time:</label>
+                        <input type="time" name="time" value={eventDetails.time || ''} onChange={handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Description:</label>
+                        <textarea name="description" value={eventDetails.description || ''} onChange={handleChange}></textarea>
+                    </div>
+                    <div className="form-group">
+                        <label>Link:</label>
+                        <input type="text" name="link" value={eventDetails.link || ''} onChange={handleChange} />
+                    </div>
+                    <button type="submit" className="save-button">Save</button>
+                </form>
+            </div>
         </div>
     );
 };

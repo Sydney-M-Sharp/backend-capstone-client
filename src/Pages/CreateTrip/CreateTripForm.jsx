@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { createTrip } from '../../data/trips.js';
 import { useAppContext } from '../../context/state';
 import { getUsers } from '../../data/users.js';
+import './createtrip.css'; // Import the CSS file
 
 const CreateTripForm = ({ onSubmit, error }) => {
     const { token } = useAppContext(); // No need for userId here
@@ -61,7 +62,7 @@ const CreateTripForm = ({ onSubmit, error }) => {
     };
 
     return (
-        <div>
+        <div className="create-trip-form">
             {error && <p>Error: {error}</p>}
             <form onSubmit={handleSubmit}>
                 <div>
