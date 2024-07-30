@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (token) {
+    if (token !== "null") {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    setToken(null);
+    setToken("null");
     setIsLoggedIn(false);
     navigate('/');
   };

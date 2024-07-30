@@ -22,7 +22,7 @@ function App() {
         <Route path="/create-trip" element={<CreateTrip />} />
 
       </Routes>
-      {/* <Navbar element={<Navbar />}/> */}
+      <Navbar element={<Navbar />}/>
     </>
   )
 }

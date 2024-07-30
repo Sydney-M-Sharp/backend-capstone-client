@@ -41,15 +41,6 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="date"],
-input[type="time"],
-textarea {
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
 
 textarea {
     resize: vertical;
