@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../context/state';
 import { login } from '../../data/auth';
+import './welcome.css'; // Import the CSS file
 
 const Login = () => {
   const { setToken, setUserId } = useAppContext();
@@ -31,44 +32,39 @@ const Login = () => {
   };
 
   return (
-    <div className="columns is-centered">
-      <div className="column is-half">
-        <form className="box" onSubmit={handleSubmit}>
-          <h1 className="title">Welcome Back!</h1>
-          <div className="field">
-            <label className="label" htmlFor="username">Username</label>
-            <div className="control">
-              <input
-                id="username"
-                className="input"
-                type="text"
-                ref={usernameRef}
-                required
-              />
-            </div>
+    <div className="section-container">
+      <form className="box" onSubmit={handleSubmit}>
+        <h3 className="title">Log In</h3>
+        <div className="field">
+          <label className="label" htmlFor="username">Username</label>
+          <div className="control">
+            <input
+              id="username"
+              className="input"
+              type="text"
+              ref={usernameRef}
+              required
+            />
           </div>
-          <div className="field">
-            <label className="label" htmlFor="password">Password</label>
-            <div className="control">
-              <input
-                id="password"
-                className="input"
-                type="password"
-                ref={passwordRef}
-                required
-              />
-            </div>
+        </div>
+        <div className="field">
+          <label className="label" htmlFor="password">Password</label>
+          <div className="control">
+            <input
+              id="password"
+              className="input"
+              type="password"
+              ref={passwordRef}
+              required
+            />
           </div>
-          <div className="field is-grouped">
-            <div className="control">
-              <button className="button is-link" type="submit">Login</button>
-            </div>
-            <div className="control">
-              <button className="button is-link is-light" type="button">Register</button>
-            </div>
+        </div>
+        <div className="field is-grouped">
+          <div className="control">
+            <button className="button is-link" type="submit">Login</button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 };

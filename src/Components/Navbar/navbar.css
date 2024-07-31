@@ -1,0 +1,12 @@
+.navbar {
+    background-color: #547258; 
+    border-top-left-radius: 30px; 
+    border-top-right-radius: 30px; 
+    color: white; /* Text color */
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    Bottom: 0;
+    
+  }
+  
