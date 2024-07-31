@@ -44,7 +44,7 @@ const MyTrips = () => {
                     ))}
                 </ul>
             ) : (
-                <p>No trips found.</p>
+                <p className='no-trips-found'>No trips found</p>
             )}
             <button onClick={() => navigate('/create-trip')} className="create-trip-button">Create New Trip</button>
         </div>

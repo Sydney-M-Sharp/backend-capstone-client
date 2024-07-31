@@ -39,7 +39,7 @@
     padding: 0.6em 1.2em;
     font-size: 1em;
     font-weight: 500;
-    background-color: #1a1a1a;
+    background-color: #6c93a9;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.25s;
@@ -57,6 +57,10 @@
     margin-top: 6rem;
 }
 
+.no-trips-found{
+
+    color: #1a1a1a;
+}
 /* Mobile-specific styles */
 @media (max-width: 500px) {
     .trip-box {
