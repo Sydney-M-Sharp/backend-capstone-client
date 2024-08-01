@@ -46,24 +46,24 @@ const CreateEventForm = () => {
             {error && <p>Error: {error}</p>}
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Title:</label>
-                    <input type="text" name="title" value={eventDetails.title} onChange={handleChange} />
+                    <label>Title: *</label>
+                    <input type="text" required name="title" value={eventDetails.title} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Location:</label>
-                    <input type="text" name="location" value={eventDetails.location} onChange={handleChange} />
+                    <label>Location: *</label>
+                    <input type="text" required name="location" value={eventDetails.location} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Date:</label>
-                    <input type="date" name="date" value={eventDetails.date} onChange={handleChange} />
+                    <label>Date: *</label>
+                    <input type="date" required name="date" value={eventDetails.date} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Time:</label>
-                    <input type="time" name="time" value={eventDetails.time} onChange={handleChange} />
+                    <label>Time: *</label>
+                    <input type="time" required name="time" value={eventDetails.time} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Description:</label>
-                    <textarea name="description" value={eventDetails.description} onChange={handleChange}></textarea>
+                    <label>Description: *</label>
+                    <textarea name="description" required value={eventDetails.description} onChange={handleChange}></textarea>
                 </div>
                 <div>
                     <label>Link:</label>

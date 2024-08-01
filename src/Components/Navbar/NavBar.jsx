@@ -23,36 +23,26 @@ const Navbar = () => {
     setIsLoggedIn(false);
     navigate('/');
   };
+  const handleNavigate = () => {
+
+    navigate('/my-trips');
+  };
 
   return (
-    <nav className="navbar">
-      
-      <div className="navbar-menu">
-        
-        <div className="navbar-end">
+    <nav className={`navbar ${!isLoggedIn ? 'hidden' : ''}`}>
+  
           {isLoggedIn ? (
-            <div className="navbar-item has-dropdown is-hoverable">
-              <span className="navbar-link">
-                <i className="fas fa-user-circle is-medium"></i>
-              </span>
-              <div className="navbar-dropdown is-right">
-                <NavLink to="/my-trips" className="navbar-item">My Trips</NavLink>
-                <hr className="navbar-divider" />
+              <div className="navbar-container">
+              <button onClick={handleNavigate}  className="navbar-item">My Trips</button>
+
                 <button onClick={handleLogout} className="navbar-item">Log out</button>
               </div>
-            </div>
           ) : (
             <div className="navbar-item">
-              {/* <div className="buttons">
-                <NavLink to="/register" className="button is-primary">
-                  <strong>Sign up</strong>
-                </NavLink>
-                <NavLink to="/login" className="button is-light">Log in</NavLink>
-              </div> */}
+              {}
             </div>
           )}
-        </div>
-      </div>
+        
     </nav>
   );
 };

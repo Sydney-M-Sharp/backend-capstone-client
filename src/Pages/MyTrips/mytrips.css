@@ -1,14 +1,16 @@
-/* mytrips.css */
-
-/* General styles for the trips list */
 .trips-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    margin-bottom: 4rem;
 }
 
 .trip-item {
     margin-bottom: 20px;
+}
+
+.button-section{
+    margin-bottom: 2rem;
 }
 
 /* Style for each trip box */
@@ -24,8 +26,11 @@
 
 .trip-link {
     text-decoration: none;
-    color: #000;
+    color: #3e5a6c;
     font-weight: bold;
+}
+.trip-link:hover{
+    color: #506f83;
 }
 
 .trip-details {
@@ -33,7 +38,6 @@
 }
 
 .create-trip-button {
-    margin-top: 20px;
     border-radius: 8px;
     border: 1px solid transparent;
     padding: 0.6em 1.2em;
@@ -46,21 +50,14 @@
 }
 
 .create-trip-button:hover {
-    background-color: #646cff;
-}
-
-/* Centering the page container on the page */
-.page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 6rem;
+    background-color: #6c93a9;
 }
 
 .no-trips-found{
 
     color: #1a1a1a;
 }
+
 /* Mobile-specific styles */
 @media (max-width: 500px) {
     .trip-box {

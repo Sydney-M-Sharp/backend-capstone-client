@@ -4,7 +4,7 @@ import { getEventsByTripID, deleteEventByID } from '../../data/events.js';
 import { useAppContext } from '../../context/state';
 import { convertTo12HourFormat } from '../../Components/Time.jsx';
 import { formatDate } from '../../Components/FormatDate.jsx';
-import './tripdetails.css'; // Import the CSS file
+// import './tripdetails.css'; // Import the CSS file
 
 const TripDetails = () => {
     const { tripId } = useParams(); // Get the tripId from the URL

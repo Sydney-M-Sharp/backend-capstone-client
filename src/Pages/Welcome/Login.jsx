@@ -60,7 +60,7 @@ const Login = () => {
           </div>
         </div>
         <div className="field is-grouped">
-          <div className="control">
+        <div className="control-button">
             <button className="button is-link" type="submit">Login</button>
           </div>
         </div>
