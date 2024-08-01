@@ -15,10 +15,12 @@ function Welcome() {
       </header>
       
         <div className="page-container">
+        <div className="section-container">
+        Welcome to our app! Please log in or register to continue.
+        </div>
           <Login />
           <Register />
         </div>
-     
       <footer>
         <p>© 2024 Designs by Squid</p>
       </footer>

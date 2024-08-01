@@ -12,9 +12,7 @@ function App() {
     <>
     
       <Routes> 
-      
         <Route path="/" element={<Welcome />} /> 
-
         <Route path="my-trips" element={<MyTrips />} /> 
         <Route path="trip-details/:tripId" element={<TripDetails />} />
         <Route path="edit-event/:eventId" element={<EditEventPage />} />

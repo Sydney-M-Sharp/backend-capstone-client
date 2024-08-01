@@ -1,15 +1,18 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../../data/auth';
+import { useAppContext } from '../../context/state';
 import './welcome.css'; // Import the CSS file
 
 const Register = () => {
+  const { setToken, setUserId } = useAppContext();
   const usernameRef = useRef('');
   const passwordRef = useRef('');
   const firstNameRef = useRef('');
   const lastNameRef = useRef('');
   const emailRef = useRef('');
   const navigate = useNavigate();
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +27,8 @@ const Register = () => {
     try {
       const res = await register(user);
       if (res && res.token) {
+          setToken(res.token);
+          setUserId(res.id);
         // Registration successful, redirect or notify user
         alert('Registration successful');
         navigate('/my-trips'); // Redirect to my trips page
@@ -100,8 +105,8 @@ const Register = () => {
           </div>
         </div>
         <div className="field is-grouped">
-          <div className="control">
-            <button className="button is-link" type="submit">Register</button>
+          <div className="control-button">
+            <button className="button" type="submit">Register</button>
           </div>
         </div>
       </form>

@@ -26,9 +26,12 @@ const MyTrips = () => {
             <header className='page-header'>
                 <h1>My Trips</h1>
             </header>
-
+            <div className="button-section">
+            <button onClick={() => navigate('/create-trip')} className="create-trip-button">Create New Trip</button>
+            </div>
             {trips.length > 0 ? (
                 <ul className="trips-list">
+                    
                     {trips.map(trip => (
                         <li key={trip.id} className="trip-item">
                             <div className="trip-box">
@@ -46,7 +49,7 @@ const MyTrips = () => {
             ) : (
                 <p className='no-trips-found'>No trips found</p>
             )}
-            <button onClick={() => navigate('/create-trip')} className="create-trip-button">Create New Trip</button>
+            
         </div>
     );
 };
