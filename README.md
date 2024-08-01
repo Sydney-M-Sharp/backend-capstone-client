@@ -1,4 +1,4 @@
-# My Dream closet (Client Side Capstone Project for NSS)
+# Socii Trip Planning App (Backend Capstone Project for NSS)
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
