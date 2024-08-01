@@ -6,6 +6,9 @@
     padding: 0;
     margin: 0;
     margin-bottom: 4rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    
 }
 
 .event-item {
@@ -93,6 +96,15 @@
 
     .create-event-button, .edit-button, .delete-button {
         padding: 0.5em 1em; /* Adjust padding for smaller screens */
+    }
+    .events-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 4rem;
+        margin-left: 4rem;
+        margin-right: 4rem;
+        
     }
 }
 
