@@ -106,7 +106,7 @@ const TripDetails = () => {
                     ))}
                 </ul>
             ) : (
-                <p>No events found for this trip.</p>
+                <p className='no-event'>No events found for this trip</p>
             )}
         </div>
     );
