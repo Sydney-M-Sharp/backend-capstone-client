@@ -10,7 +10,7 @@ function Welcome() {
         {/* Navigation content */}
       </nav>
       <header className='page-header'>
-        <h1>Welcome to ___</h1>
+        <h1>Welcome to Socii</h1>
         <p>Let's Start Planning Your Next Adventure</p>
       </header>
       
