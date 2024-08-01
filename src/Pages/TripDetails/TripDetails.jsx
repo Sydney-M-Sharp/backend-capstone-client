@@ -4,7 +4,7 @@ import { getEventsByTripID, deleteEventByID } from '../../data/events.js';
 import { useAppContext } from '../../context/state';
 import { convertTo12HourFormat } from '../../Components/Time.jsx';
 import { formatDate } from '../../Components/FormatDate.jsx';
-// import './tripdetails.css'; // Import the CSS file
+import './tripdetails.css'; // Import the CSS file
 
 const TripDetails = () => {
     const { tripId } = useParams(); // Get the tripId from the URL
@@ -79,7 +79,9 @@ const TripDetails = () => {
             <header className='page-header'>
                 <h1>Trip Details</h1>
             </header>
+            <div className='button-section'>
             <button onClick={handleCreateEventClick} className="create-event-button">Create New Event</button>
+            </div>
             {tripEvents.length > 0 ? (
                 <ul className="events-list">
                     {tripEvents.map(event => (
@@ -104,7 +106,7 @@ const TripDetails = () => {
                     ))}
                 </ul>
             ) : (
-                <p>No events found for this trip.</p>
+                <p className='no-event'>No events found for this trip</p>
             )}
         </div>
     );

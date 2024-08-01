@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getEventByID, updateEventByID } from '../../data/events.js'; 
 import { useAppContext } from '../../context/state';
-// import './editevent.css'; 
+import './editevent.css'
 
 const EditEvent = () => {
     const { eventId } = useParams(); // Get the eventId from the URL

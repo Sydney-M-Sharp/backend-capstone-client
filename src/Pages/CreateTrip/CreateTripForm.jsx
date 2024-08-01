@@ -3,23 +3,23 @@ import { useNavigate } from 'react-router-dom';
 import { createTrip } from '../../data/trips.js';
 import { useAppContext } from '../../context/state';
 import { getUsers } from '../../data/users.js';
-// import './createtrip.css'; // Import the CSS file
+import './createtrip.css';
 
 const CreateTripForm = ({ onSubmit, error }) => {
-    const { token } = useAppContext(); // No need for userId here
+    const { token } = useAppContext();
     const navigate = useNavigate();
     const [tripDetails, setTripDetails] = useState({
         location: '',
         start_date: '',
         end_date: '',
-        invited_users: [] // No default user IDs
+        invited_users: []
     });
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const allUsers = await getUsers(token); // Fetch all users
+                const allUsers = await getUsers(token);
                 setUsers(allUsers);
             } catch (err) {
                 console.error(err);
@@ -51,14 +51,14 @@ const CreateTripForm = ({ onSubmit, error }) => {
         e.preventDefault();
         try {
             await createTrip(tripDetails, token);
-            navigate(`/my-trips`); // Redirect to trips page after saving
+            navigate(`/my-trips`);
         } catch (error) {
             console.error(error.message);
         }
     };
 
     const handleCancel = () => {
-        navigate(`/my-trips`); // Redirect to trips page without saving
+        navigate(`/my-trips`);
     };
 
     return (
@@ -75,26 +75,32 @@ const CreateTripForm = ({ onSubmit, error }) => {
                 </div>
                 <div>
                     <label>End Date:</label>
-                    <input type="date" name="end_date" value={tripDetails.end_date} onChange={handleChange} />
+                    <input  type="date" name="end_date" value={tripDetails.end_date} onChange={handleChange} />
                 </div>
-                <div>
+                
+                    
                     <h3>Invite Users:</h3>
-                    {users.map(user => (
-                        <div key={user.id}>
-                            <label>
+                    <div className='lower-form'>
+                    <div className='invite-users-checkbox-section'>
+                        {users.map(user => (
+                            <div key={user.id} className='invite-users-checkbox'>
+                                <span>{user.first_name} {user.last_name}</span>
                                 <input
+                                className='invite-user-checkboxes'
                                     type="checkbox"
                                     value={user.id}
                                     checked={tripDetails.invited_users.includes(user.id)}
                                     onChange={handleCheckboxChange}
                                 />
-                                {user.first_name} {user.last_name}
-                            </label>
+                            </div>
+                        ))}
+                    </div>
+                
+                <div className='trip-button-section'>
+                <button type="submit" className='create-trip-button'>Create Trip</button>
+                <button type="button" className='cancel-trip-create-button' onClick={handleCancel}>Cancel</button>
                         </div>
-                    ))}
-                </div>
-                <button type="submit">Create Trip</button>
-                <button type="button" onClick={handleCancel}>Cancel</button>
+                        </div>
             </form>
         </div>
     );

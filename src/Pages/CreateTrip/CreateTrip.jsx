@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import CreateTripForm from './CreateTripForm';
 import { createTrip } from '../../data/trips.js';
 import { useAppContext } from '../../context/state';
-// import './createtrip.css'; // Import the CSS file
+import './createtrip.css'; // Import the CSS file
 
 const CreateTrip = () => {
     const { token } = useAppContext(); // Get the token from context
@@ -20,9 +20,9 @@ const CreateTrip = () => {
     };
 
     return (
-        <div className="page-container">
-            <div className="section-container">
+        <div className="new-trip-page-container">
             <header className='page-header'> <h1>Create New Trip</h1> </header>
+            <div className="create-trip-section-container">
                 <CreateTripForm onSubmit={handleSubmit} error={error} />
             </div>
         </div>

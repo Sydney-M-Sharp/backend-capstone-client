@@ -10,7 +10,7 @@
     margin-bottom: 5rem;
   }
   /* Style for the form container */
-.create-trip-section-container {
+.create-event-container {
     background-color: #9dbbae; /* Green background */
     border-radius: 15px; /* Rounded edges */
     padding: 20px; /* Padding inside the box */
@@ -18,7 +18,7 @@
     max-width: 600px; /* Maximum width of the form box */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better visibility */
 }
-.create-trip-container {
+.create-event-container {
     background-color: #9dbbae; /* Green background */
     border-radius: 15px; /* Rounded edges */
     padding: 20px; /* Padding inside the box */
