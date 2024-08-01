@@ -5,6 +5,7 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    margin-bottom: 4rem;
 }
 
 .event-item {
@@ -38,31 +39,34 @@
 }
 
 .edit-button {
-    background-color: #1a1a1a;
+    background-color: #6c93a9;
     color: #fff;
 }
 
 .edit-button:hover {
-    background-color: #646cff;
+    background-color: #506f83;
 }
 
 .delete-button {
-    background-color: #d9534f;
+    background-color: #9d525e;
     color: #fff;
 }
 
 .delete-button:hover {
-    background-color: #c9302c;
+    background-color: #993a4a;
 }
 
+.button-section{
+    margin-bottom: 2rem;
+    
+}
 .create-event-button {
-    margin: 20px 0;
     border-radius: 8px;
     border: 1px solid transparent;
     padding: 0.6em 1.2em;
     font-size: 1em;
     font-weight: 500;
-    background-color: #1a1a1a;
+    background-color: #6c93a9;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.25s;

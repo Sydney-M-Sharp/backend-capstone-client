@@ -79,7 +79,9 @@ const TripDetails = () => {
             <header className='page-header'>
                 <h1>Trip Details</h1>
             </header>
+            <div className='button-section'>
             <button onClick={handleCreateEventClick} className="create-event-button">Create New Event</button>
+            </div>
             {tripEvents.length > 0 ? (
                 <ul className="events-list">
                     {tripEvents.map(event => (
