@@ -1,25 +1,5 @@
 /* editevent.css */
 
-/* General styles for the edit event page */
-.page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 6rem;
-}
-
-.page-header {
-    background-color: #547258; 
-    color: white; 
-    text-align: center;
-    width: 100%;
-    max-width: 1000px; /* Adjusted width */
-    border-bottom-left-radius: 30px; 
-    border-bottom-right-radius: 30px; 
-    padding: 10px;
-    margin-bottom: 20px; /* Add space below the header */
-}
-
 /* Style for the form container */
 .section-container {
     background-color: #9dbbae; /* Green background */

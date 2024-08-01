@@ -1,8 +1,9 @@
-import CreateEventForm from './EventForm';
+import CreateEventForm from './CreateEventForm.jsx';
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createEvent } from '../../data/events.js';
 import { useAppContext } from '../../context/state';
+import './createevent.css';
 
 const CreateEvent = () => {
     const { tripId } = useParams(); // Get the tripId from the URL
@@ -21,8 +22,11 @@ const CreateEvent = () => {
     };
 
     return (
-        <div>
+        <div className="page-container" >
+            <header className='page-header'>
             <h1>Create New Event</h1>
+            </header>
+            
             <CreateEventForm onSubmit={handleSubmit} error={error} />
         </div>
     );

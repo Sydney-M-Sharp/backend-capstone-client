@@ -1,0 +1,112 @@
+
+/* General styles for the create trip form */
+
+.new-trip-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack the sections vertically */
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+  }
+  /* Style for the form container */
+.create-event-container {
+    background-color: #9dbbae; /* Green background */
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px; /* Padding inside the box */
+    width: 100%; /* Full width inside container */
+    max-width: 600px; /* Maximum width of the form box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better visibility */
+}
+.create-event-container {
+    background-color: #9dbbae; /* Green background */
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px; /* Padding inside the box */
+    margin: 20px; /* White space around the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better visibility */
+    width: 80%; /* Width of the box */
+    max-width: 600px; /* Maximum width of the box */
+    margin: 20px auto; /* Centering the box on the page */
+}
+
+
+.invite-users-checkbox{
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #c0cfc1;
+    border-radius: 15px; /* Rounded edges */
+    margin: .5rem;
+}
+
+/* Styling the form elements */
+.create-trip-form {
+    display: flex;
+    
+    gap: 1rem; /* Space between form elements */
+}
+
+.create-trip-form label {
+    font-weight: bold;
+}
+
+.create-trip-form input[type="text"],
+.create-trip-form input[type="date"],
+.create-trip-form input[type="checkbox"] {
+    border-radius: 10px; /* Rounded edges for inputs */
+    border: 1px solid #ddd; /* Light border for inputs */
+    padding: 10px; /* Padding inside the inputs */
+}
+
+.create-trip-form button {
+    margin-right: 10px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.create-trip-button {
+    background-color: #6c93a9;
+    color: #fff;
+}
+
+.create-trip-button :hover {
+    background-color: #506f83;
+}
+
+.cancel-trip-create-button {
+    background-color: #9d525e;
+    color: #fff;
+}
+
+.cancel-trip-create-button:hover {
+    background-color: #993a4a;
+}
+
+.trip-button-section{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.lower-form{
+    margin-left: 2.5rem;
+    
+}
+/* Mobile-specific styles */
+@media (max-width: 500px) {
+    .create-trip-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+        width: 90%; /* Width of the box for smaller screens */
+    }
+}
+
+@media (max-width: 320px) {
+    .create-trip-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin: 15px; /* Adjust margin for smaller screens */
+    }
+}
