@@ -40,7 +40,7 @@ const CreateTripForm = ({ onSubmit, error }) => {
     const handleCheckboxChange = (e) => {
         const { value, checked } = e.target;
         setTripDetails(prevDetails => {
-            const invited_users = checked 
+            const invited_users = checked
                 ? [...new Set([...prevDetails.invited_users, parseInt(value)])]
                 : prevDetails.invited_users.filter(id => id !== parseInt(value));
             return { ...prevDetails, invited_users };
@@ -75,18 +75,18 @@ const CreateTripForm = ({ onSubmit, error }) => {
                 </div>
                 <div>
                     <label>End Date:</label>
-                    <input  type="date" name="end_date" value={tripDetails.end_date} onChange={handleChange} />
+                    <input type="date" name="end_date" value={tripDetails.end_date} onChange={handleChange} />
                 </div>
-                
-                    
-                    <h3>Invite Users:</h3>
-                    <div className='lower-form'>
+
+
+                <h3>Invite Users:</h3>
+                <div className='lower-form'>
                     <div className='invite-users-checkbox-section'>
                         {users.map(user => (
                             <div key={user.id} className='invite-users-checkbox'>
                                 <span>{user.first_name} {user.last_name}</span>
                                 <input
-                                className='invite-user-checkboxes'
+                                    className='invite-user-checkboxes'
                                     type="checkbox"
                                     value={user.id}
                                     checked={tripDetails.invited_users.includes(user.id)}
@@ -95,12 +95,12 @@ const CreateTripForm = ({ onSubmit, error }) => {
                             </div>
                         ))}
                     </div>
-                
-                <div className='trip-button-section'>
-                <button type="submit" className='create-trip-button'>Create Trip</button>
-                <button type="button" className='cancel-trip-create-button' onClick={handleCancel}>Cancel</button>
-                        </div>
-                        </div>
+
+                    <div className='trip-button-section'>
+                        <button type="submit" className='create-trip-button'>Create Trip</button>
+                        <button type="button" className='cancel-trip-create-button' onClick={handleCancel}>Cancel</button>
+                    </div>
+                </div>
             </form>
         </div>
     );
