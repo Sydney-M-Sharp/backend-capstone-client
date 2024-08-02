@@ -131,6 +131,7 @@ button:focus-visible {
   }
   
   .page-header {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.512); 
     background-color: #547258; 
     border-bottom-left-radius: 30px; 
     border-bottom-right-radius: 30px; 

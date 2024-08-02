@@ -17,6 +17,7 @@
   right: 0; /* Ensure the navbar is aligned with the right edge of the viewport */
   margin: 0 auto; /* Center the navbar horizontally */
   transition: opacity 0.3s ease; /* Smooth transition for visibility change */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.357); 
 }
 
 /* Hide the navbar when logged out */

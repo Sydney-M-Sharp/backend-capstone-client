@@ -46,10 +46,22 @@
     border-radius: 15px; 
     padding: 20px; 
     margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.357); 
     width: 80%; 
     max-width: 400px; 
     box-sizing: border-box; 
+    font-weight: bold;
     margin-top: 2rem;
+  }
+  .section-container-for-messages{
+    background-color: #9dbbae; 
+    border-radius: 15px; 
+    padding: 20px; 
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.357); 
+    width: 80%; 
+    max-width: 400px; 
+    box-sizing: border-box; 
+   
   }
 }
