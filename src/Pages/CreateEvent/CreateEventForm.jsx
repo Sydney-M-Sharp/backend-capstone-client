@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { createEvent } from '../../data/events.js';
 import { useAppContext } from '../../context/state.jsx';
+import './createevent.css';
 
 const CreateEventForm = () => {
     const { tripId } = useParams(); // Get the tripId from the URL
@@ -69,8 +70,10 @@ const CreateEventForm = () => {
                     <label>Link:</label>
                     <input type="text" name="link" value={eventDetails.link} onChange={handleChange} />
                 </div>
-                <button type="submit">Create Event</button>
-                <button type="button" onClick={handleCancel}>Cancel</button>
+                <div className='event-button-section'>
+                    <button type="submit" className='create-event-button'>Create Event</button>
+                    <button type="button" className='cancel-event-create-button' onClick={handleCancel}>Cancel</button>
+                </div>
             </form>
         </div>
     );

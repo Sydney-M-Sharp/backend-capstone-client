@@ -9,15 +9,7 @@
     margin-top: 4rem;
     margin-bottom: 5rem;
   }
-  /* Style for the form container */
-.create-event-container {
-    background-color: #9dbbae; /* Green background */
-    border-radius: 15px; /* Rounded edges */
-    padding: 20px; /* Padding inside the box */
-    width: 100%; /* Full width inside container */
-    max-width: 600px; /* Maximum width of the form box */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better visibility */
-}
+  
 .create-event-container {
     background-color: #9dbbae; /* Green background */
     border-radius: 15px; /* Rounded edges */
@@ -27,6 +19,9 @@
     width: 80%; /* Width of the box */
     max-width: 600px; /* Maximum width of the box */
     margin: 20px auto; /* Centering the box on the page */
+    margin-bottom: 5rem;
+    padding-right: 2rem;
+
 }
 
 
@@ -70,28 +65,33 @@
     transition: background-color 0.25s;
 }
 
-.create-trip-button {
+.create-event-button {
     background-color: #6c93a9;
     color: #fff;
+    margin-right: 1rem;
 }
 
-.create-trip-button :hover {
+.create-event-button :hover {
     background-color: #506f83;
 }
 
-.cancel-trip-create-button {
+.cancel-event-create-button {
     background-color: #9d525e;
     color: #fff;
 }
 
-.cancel-trip-create-button:hover {
+.cancel-event-create-button:hover {
     background-color: #993a4a;
 }
 
-.trip-button-section{
+
+.event-button-section{
     margin-bottom: 1rem;
     margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
 }
+
 .lower-form{
     margin-left: 2.5rem;
     

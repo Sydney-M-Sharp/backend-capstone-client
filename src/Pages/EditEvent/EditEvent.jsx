@@ -63,7 +63,7 @@ const EditEvent = () => {
                 <h1>Edit Event</h1>
             </header>
 
-            <div className="section-container">
+            <div className="edit-section-container">
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Title:</label>
