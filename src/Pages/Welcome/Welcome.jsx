@@ -16,8 +16,9 @@ function Welcome() {
       
         <div className="page-container">
         <div className="section-container-for-message">
-        Here you will be able to plan trips and invite others in one convenient app. We can't wait to see where you go next!
-        
+        With Socii you can to plan trips with others in one convenient app. We can't wait to see where you go next!
+        </div>
+        <div className="section-container-for-messages">
         Please log in or register below to continue.
         </div>
           <Login />
