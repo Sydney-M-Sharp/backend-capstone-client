@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useEffect, useState, useRef } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate,useLocation } from 'react-router-dom';
 import { useAppContext } from '../../context/state';
 import './navbar.css';
 
@@ -8,6 +8,7 @@ const Navbar = () => {
   const { token, setToken } = useAppContext();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     if (token !== "null") {
@@ -34,7 +35,12 @@ const Navbar = () => {
           {isLoggedIn ? (
               <div className="navbar-container">
               <button onClick={handleNavigate}  className="navbar-item">My Trips</button>
-
+              {location.pathname === '/my-trips' && (
+                <div className='create-section'>
+              
+                <button className="navbar-item" onClick={() => navigate('/create-trip')}>Create New Trip</button>
+                </div>
+              )}
                 <button onClick={handleLogout} className="navbar-item">Log out</button>
               </div>
           ) : (
