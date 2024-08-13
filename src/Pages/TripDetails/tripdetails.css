@@ -14,7 +14,9 @@
 .event-item {
     margin-bottom: 20px;
 }
-
+ h3{
+    color: #3e5a6c;
+ }
 /* Style for each event box */
 .event-box {
     background-color: #9dbbae; /* Green background */
@@ -126,3 +128,33 @@
         padding: 0.5em 1em; /* Adjust padding for smaller screens */
     }
 }
+/* Styles for the date box that wraps multiple events on the same day */
+.date-box {
+    background-color: #9dbbae; /* Dark green background */
+    border-radius: 20px; /* Rounded edges */
+    padding: 15px; /* Padding inside the box */
+    margin-bottom: 20px; /* Space between date boxes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center child elements (event boxes) horizontally */
+}
+
+/* Style for the date heading */
+.date-box h2 {
+    color: #fff; /* White text for the date */
+    margin-bottom: 10px; /* Space between date and events */
+}
+
+/* Existing styles for each event box */
+.event-box {
+    background-color: #c0cfc1; /* Light green background */
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 10px; /* Space between event boxes */
+    max-width: 600px; /* Maximum width of the event box */
+    width: 100%; /* Make the event box take up full width available */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
