@@ -21,12 +21,10 @@ const TripDetails = () => {
 
                 // Sort events by date first, then by time
                 const sortedEvents = data.sort((a, b) => {
-                    // Convert dates to comparable values
                     const dateA = new Date(a.date);
                     const dateB = new Date(b.date);
                     
                     if (dateA.getTime() === dateB.getTime()) {
-                        // If dates are the same, sort by time
                         const [aHour, aMinute] = a.time.split(':').map(Number);
                         const [bHour, bMinute] = b.time.split(':').map(Number);
                         
@@ -53,23 +51,28 @@ const TripDetails = () => {
     if (loading) return <p>Loading events...</p>;
     if (error) return <p>Error loading events: {error}</p>;
 
+    // Group events by date
+    const groupedEvents = tripEvents.reduce((acc, event) => {
+        const date = formatDate(event.date);
+        if (!acc[date]) {
+            acc[date] = [];
+        }
+        acc[date].push(event);
+        return acc;
+    }, {});
+
     const handleEditClick = (eventId) => {
         navigate(`/edit-event/${eventId}`);
     };
-
-    // const handleCreateEventClick = () => {
-    //     navigate(`/create-event/${tripId}`); // Adjust the path as needed
-    // };
 
     const handleDeleteClick = async (eventId) => {
         if (window.confirm("Are you sure you want to delete this event?")) {
             try {
                 await deleteEventByID(eventId, token);
-                // Filter out the deleted event from the state
                 setTripEvents(tripEvents.filter(event => event.id !== eventId));
-                setError(null); // Clear the error if deletion is successful
+                setError(null);
             } catch (error) {
-                setError('Failed to delete the event'); // Set error if deletion fails
+                setError('Failed to delete the event');
             }
         }
     };
@@ -79,28 +82,29 @@ const TripDetails = () => {
             <header className='page-header'>
                 <h1>Trip Details</h1>
             </header>
-            {/* <div className='button-section'>
-            <button onClick={handleCreateEventClick} className="create-event-button">Create New Event</button>
-            </div> */}
-            {tripEvents.length > 0 ? (
+            {Object.keys(groupedEvents).length > 0 ? (
                 <ul className="events-list">
-                    {tripEvents.map(event => (
-                        <li key={event.id} className="event-item">
-                            <div className="event-box">
-                                <h2>{event.title}</h2>
-                                <p>{event.description}</p>
-                                <p>Location: {event.location}</p>
-                                <p>Date: {formatDate(event.date)}</p> {/* Format the date */}
-                                <p>Time: {convertTo12HourFormat(event.time)}</p>
-                                <p>Link: {event.link}</p>
-                                <p>Event created by: {event.user.first_name}</p>
+                    {Object.keys(groupedEvents).map(date => (
+                        <li key={date} className="date-item">
+                            <div className="date-box">
+                                <h2>{date}</h2>
+                                {groupedEvents[date].map(event => (
+                                    <div key={event.id} className="event-box">
+                                        <h3>{event.title}</h3>
+                                        <p>{event.description}</p>
+                                        <p>Time: {convertTo12HourFormat(event.time)}</p>
+                                        <p>Location: {event.location}</p>
+                                        <p>Link: {event.link}</p>
+                                        <p>Event created by: {event.user.first_name}</p>
 
-                                {parseInt(event.user.id) === parseInt(userId) && (
-                                    <div className="event-actions">
-                                        <button onClick={() => handleEditClick(event.id)} className="edit-button">Edit</button>
-                                        <button onClick={() => handleDeleteClick(event.id)} className="delete-button">Delete</button>
+                                        {parseInt(event.user.id) === parseInt(userId) && (
+                                            <div className="event-actions">
+                                                <button onClick={() => handleEditClick(event.id)} className="edit-button">Edit</button>
+                                                <button onClick={() => handleDeleteClick(event.id)} className="delete-button">Delete</button>
+                                            </div>
+                                        )}
                                     </div>
-                                )}
+                                ))}
                             </div>
                         </li>
                     ))}
