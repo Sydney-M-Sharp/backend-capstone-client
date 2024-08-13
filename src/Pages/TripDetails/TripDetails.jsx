@@ -57,9 +57,9 @@ const TripDetails = () => {
         navigate(`/edit-event/${eventId}`);
     };
 
-    const handleCreateEventClick = () => {
-        navigate(`/create-event/${tripId}`); // Adjust the path as needed
-    };
+    // const handleCreateEventClick = () => {
+    //     navigate(`/create-event/${tripId}`); // Adjust the path as needed
+    // };
 
     const handleDeleteClick = async (eventId) => {
         if (window.confirm("Are you sure you want to delete this event?")) {
@@ -79,9 +79,9 @@ const TripDetails = () => {
             <header className='page-header'>
                 <h1>Trip Details</h1>
             </header>
-            <div className='button-section'>
+            {/* <div className='button-section'>
             <button onClick={handleCreateEventClick} className="create-event-button">Create New Event</button>
-            </div>
+            </div> */}
             {tripEvents.length > 0 ? (
                 <ul className="events-list">
                     {tripEvents.map(event => (

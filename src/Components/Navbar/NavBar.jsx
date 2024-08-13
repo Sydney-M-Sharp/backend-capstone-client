@@ -41,6 +41,17 @@ const Navbar = () => {
                 <button className="navbar-item" onClick={() => navigate('/create-trip')}>Create New Trip</button>
                 </div>
               )}
+              {/* {location.pathname === '/trip-details/:tripId' && (
+                <div className='create-section'>
+              
+                <button className="navbar-item" onClick={() => navigate(`/create-event/${tripId}`)}>Create New Event</button>
+                </div>
+              )} */}
+              {location.pathname.startsWith('/trip-details/') && (
+            <div className='create-section'>
+              <button className="navbar-item" onClick={() => navigate(`/create-event/${location.pathname.split('/').pop()}`)}>Create New Event</button>
+            </div>
+          )}
                 <button onClick={handleLogout} className="navbar-item">Log out</button>
               </div>
           ) : (
