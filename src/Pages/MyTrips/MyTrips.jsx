@@ -26,9 +26,7 @@ const MyTrips = () => {
             <header className='page-header'>
                 <h1>My Trips</h1>
             </header>
-            <div className="button-section">
-            <button onClick={() => navigate('/create-trip')} className="create-trip-button">Create New Trip</button>
-            </div>
+            
             {trips.length > 0 ? (
                 <ul className="trips-list">
                     

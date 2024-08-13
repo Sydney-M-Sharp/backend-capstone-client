@@ -19,7 +19,7 @@ function Welcome() {
         With Socii you can to plan trips with others in one convenient app. We can't wait to see where you go next!
         </div>
         <div className="section-container-for-messages">
-        Please log in or register below to continue.
+        Please log in or register below to continue
         </div>
           <Login />
           <Register />
