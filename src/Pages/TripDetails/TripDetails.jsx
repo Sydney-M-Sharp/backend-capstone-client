@@ -91,7 +91,7 @@ const TripDetails = () => {
                                 {groupedEvents[date].map(event => (
                                     <div key={event.id} className="event-box">
                                         <h3>{event.title}</h3>
-                                        <p>{event.description}</p>
+                                        <p className='description'>{event.description}</p>
                                         <p>Time: {convertTo12HourFormat(event.time)}</p>
                                         <p>Location: {event.location}</p>
                                         <p>Link: {event.link}</p>
