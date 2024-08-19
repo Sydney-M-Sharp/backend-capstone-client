@@ -14,7 +14,7 @@
 .event-item {
     margin-bottom: 20px;
 }
- .description,h3{
+ .description,h3,p{
     color: #3e5a6c;
  }
 /* Style for each event box */
