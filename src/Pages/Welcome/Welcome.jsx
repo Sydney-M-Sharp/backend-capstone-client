@@ -11,7 +11,7 @@ function Welcome() {
       </nav>
       <header className='page-header'>
         <h1>Welcome to Socii</h1>
-        <p>Let's Start Planning Your Next Adventure</p>
+        <div>Let's Start Planning Your Next Adventure</div>
       </header>
       
         <div className="page-container">
