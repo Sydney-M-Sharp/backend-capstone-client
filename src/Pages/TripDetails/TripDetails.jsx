@@ -97,6 +97,7 @@ const TripDetails = () => {
                                         <p>Link: {event.link}</p>
                                         <p>Event created by: {event.user.first_name}</p>
 
+                                        {/* Only show the edit and delete buttons if the event was created by the current user */}
                                         {parseInt(event.user.id) === parseInt(userId) && (
                                             <div className="event-actions">
                                                 <button onClick={() => handleEditClick(event.id)} className="edit-button">Edit</button>
