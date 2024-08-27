@@ -17,13 +17,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; 
-  
-
-
 }
 
 a {
@@ -126,7 +119,7 @@ button:focus-visible {
     justify-content: center;
     align-items: center;
     flex-direction: column; /* Stack the sections vertically */
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
   
   .page-header {
