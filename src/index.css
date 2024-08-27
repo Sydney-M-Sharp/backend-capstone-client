@@ -16,14 +16,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
-  box-sizing: border-box;
+
 }
 
 a {
@@ -38,14 +31,13 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   min-width: 320px;
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
+  justify-content: center;
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -127,7 +119,7 @@ button:focus-visible {
     justify-content: center;
     align-items: center;
     flex-direction: column; /* Stack the sections vertically */
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
   
   .page-header {
@@ -156,14 +148,14 @@ button:focus-visible {
     width: 100%;
     padding: 1rem; /* Add padding to ensure there's space around the boxes */
   }
-  .page-container {
+  /* .page-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Stack the sections vertically */
+    flex-direction: column; 
     margin-top: 5rem;
   
-  }
+  } */
   
   .page-header {
     background-color: #547258; 
