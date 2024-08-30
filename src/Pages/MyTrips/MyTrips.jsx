@@ -3,6 +3,7 @@ import { useAppContext } from '../../context/state';
 import { getTrips, deleteTripByID } from '../../data/trips.js';
 import { Link, useNavigate } from 'react-router-dom';
 import { formatDate } from '../../Components/FormatDate.jsx';
+
 import './mytrips.css'; // Import the CSS file
 
 const MyTrips = () => {
@@ -16,7 +17,6 @@ const MyTrips = () => {
             if (userId && token) {
                 const data = await getTrips(userId, token);
                 setTrips(data);
-                console.log("userid", userId);
             }
         };
 
@@ -46,15 +46,15 @@ const MyTrips = () => {
             {trips.length > 0 ? (
                 <ul className="trips-list">
                     {trips.map(trip => (
-                        <li key={trip.trip.id} className="trip-item" >
+                        <li key={trip.trip.id} className="trip-item">
                             <div className="trip-box">
                                 <Link to={`/trip-details/${trip.trip.id}`} className="trip-link">
                                     {trip.trip.location}
                                 </Link>
                                 <ul className="trip-details">
                                     <li>Start Date: {formatDate(trip.trip.start_date)}</li>
-                                    <li>End Date: {console.log(trip.user_id)}{formatDate(trip.trip.end_date)}</li>
-                                    {parseInt(trip) === parseInt(userId) && (
+                                    <li>End Date: {formatDate(trip.trip.end_date)}</li>
+                                    {parseInt(trip.user.id) === parseInt(userId) && (
                                         <div className="trip-actions">
                                             <button onClick={() => handleDeleteClick(trip.trip.id)} className="delete-button">Delete</button>
                                         </div>
@@ -72,6 +72,3 @@ const MyTrips = () => {
 };
 
 export default MyTrips;
-
-
-
