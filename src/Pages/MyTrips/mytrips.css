@@ -61,7 +61,7 @@
 
 .trip-actions{
     margin-top: 1rem;
-    margin-left: 1.5rem;
+   
 }
 
 
@@ -97,6 +97,10 @@
         margin: 0;
         margin-top: 3.5rem;
         margin-bottom: 4rem;
+    }
+    .trip-actions{
+        margin-top: 1rem;
+        margin-left: 1.5rem;
     }
 
 }

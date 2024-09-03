@@ -50,6 +50,7 @@ const MyTrips = () => {
                             <div className="trip-box">
                                 <Link to={`/trip-details/${trip.trip.id}`} className="trip-link">
                                     {trip.trip.location}
+                                    {console.log("this is the person who made the trip", trip.trip.user, "and this is the current user", userId)}
                                 </Link>
                                 <ul className="trip-details">
                                     <li>Start Date: {formatDate(trip.trip.start_date)}</li>
