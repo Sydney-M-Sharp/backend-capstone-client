@@ -55,7 +55,7 @@ const MyTrips = () => {
                                 <ul className="trip-details">
                                     <li>Start Date: {formatDate(trip.trip.start_date)}</li>
                                     <li>End Date: {formatDate(trip.trip.end_date)}</li>
-                                    {parseInt(trip.user.id) === parseInt(userId) && (
+                                    {parseInt(trip.trip.user) === parseInt(userId) && (
                                         <div className="trip-actions">
                                             <button onClick={() => handleDeleteClick(trip.trip.id)} className="delete-button">Delete</button>
                                         </div>
