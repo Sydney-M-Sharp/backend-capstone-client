@@ -37,6 +37,11 @@ const MyTrips = () => {
         }
     };
 
+    const handleEditClick= async (tripId) => {
+        console.log("Attempting to edit trip with ID:", tripId)
+        navigate(`/edit-trip/${tripId}`);
+    };
+
     return (
         <div className="page-container">
             <header className='page-header'>
@@ -57,6 +62,7 @@ const MyTrips = () => {
                                     <li>End Date: {formatDate(trip.trip.end_date)}</li>
                                     {parseInt(trip.trip.user) === parseInt(userId) && (
                                         <div className="trip-actions">
+                                            <button onClick={() => handleEditClick(trip.trip.id)} className='edit-button>'>Edit</button>
                                             <button onClick={() => handleDeleteClick(trip.trip.id)} className="delete-button">Delete</button>
                                         </div>
                                     )}
