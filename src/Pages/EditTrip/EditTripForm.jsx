@@ -90,7 +90,7 @@ const EditTripForm = ({ onSubmit, error }) => {
 
     return (
         <div className='new-trip-page-container'>
-            <header className='page-header'> <h1>Create New Trip</h1> </header>
+            <header className='page-header'> <h1>Edit Trip</h1> </header>
             
         <div className='create-trip-section-container'>
         <div className="create-trip-form">
@@ -110,7 +110,7 @@ const EditTripForm = ({ onSubmit, error }) => {
                 </div>
 
 
-                <h3>Invite Users:</h3>
+                <h3>Invited Users:</h3>
                 <div className='lower-form'>
                     <div className='invite-users-checkbox-section'>
                         {users.map(user => (
@@ -128,7 +128,7 @@ const EditTripForm = ({ onSubmit, error }) => {
                     </div>
 
                     <div className='trip-button-section'>
-                        <button type="submit" className='create-trip-button'>Create Trip</button>
+                        <button type="submit" className='create-trip-button'>Save Trip</button>
                         <button type="button" className='cancel-trip-create-button' onClick={handleCancel}>Cancel</button>
                     </div>
                 </div>
