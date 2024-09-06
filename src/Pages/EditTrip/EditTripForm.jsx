@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { createTrip } from '../../data/trips.js';
-import { useAppContext } from '../../context/state';
+import { useAppContext } from '../../context/state.jsx';
 import { getUsers } from '../../data/users.js';
-import './createtrip.css';
+import { getTripByID}from '../../data/trips.js';
+import '../CreateTrip/createtrip.css'
 
-const CreateTripForm = ({ onSubmit, error }) => {
+
+const EditTripForm = ({ onSubmit, error }) => {
+    const { tripId } = useParams(); // Get the tripid from the URL
     const { token } = useAppContext();
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(true); // Add a loading state
     const [users, setUsers] = useState([]);
     const [tripDetails, setTripDetails] = useState({
         location: '',
@@ -29,6 +33,28 @@ const CreateTripForm = ({ onSubmit, error }) => {
 
         fetchUsers();
     }, [token]);
+
+    useEffect(() => {
+        const fetchTrip = async () => {
+            try {
+                const data = await getTripByID(tripId, token);
+                const invitedUserIds = data.invited_users.map(invite => invite.user.id);
+                setTripDetails({
+                    location: data.trip.location,
+                    start_date: data.trip.start_date,
+                    end_date: data.trip.end_date,
+                    invited_users: invitedUserIds,
+                    
+                });
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchTrip();
+    }, [tripId, token]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -63,6 +89,10 @@ const CreateTripForm = ({ onSubmit, error }) => {
     };
 
     return (
+        <div className='new-trip-page-container'>
+            <header className='page-header'> <h1>Create New Trip</h1> </header>
+            
+        <div className='create-trip-section-container'>
         <div className="create-trip-form">
             {error && <p>Error: {error}</p>}
             <form onSubmit={handleSubmit}>
@@ -104,7 +134,9 @@ const CreateTripForm = ({ onSubmit, error }) => {
                 </div>
             </form>
         </div>
+        </div>
+        </div>
     );
 };
 
-export default CreateTripForm;
+export default EditTripForm;
