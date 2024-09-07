@@ -34,7 +34,10 @@
 .trip-details {
     margin-top: 10px;
 }
-
+.trip-actions{
+    margin-top: 1rem;
+   
+}
 .button-section{
     margin-bottom: 2rem;
 }

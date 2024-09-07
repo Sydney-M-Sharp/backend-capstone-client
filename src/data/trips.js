@@ -64,28 +64,28 @@ export const createTrip = async (tripData, token) => {
     }
 };
 
-// export const updateTripByID = async (tripId, tripData, token) => {
-//     try {
-//         const { trip, ...updateData } = eventData; // Exclude trip from the update data
-//         const response = await fetch(`http://localhost:8000/trip/${tripId}`, {
-//             method: 'PUT',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Authorization': `Token ${token}`
-//             },
-//             body: JSON.stringify(updateData) // Send only the event details
-//         });
+export const updateTripByID = async (tripId, tripData, token) => {
+    try {
+        const { trip, ...updateData } = tripData; 
+        const response = await fetch(`http://localhost:8000/trips/${tripId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${token}`
+            },
+            body: JSON.stringify(updateData) 
+        });
 
-//         if (!response.ok) {
-//             throw new Error(`HTTP error! status: ${response.status}`);
-//         }
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-//         return await response.json();
-//     } catch (error) {
-//         console.error('Error updating event:', error);
-//         throw error;
-//     }
-// };
+        return await response.json();
+    } catch (error) {
+        console.error('Error updating event:', error);
+        throw error;
+    }
+};
 
 export const deleteTripByID = async (tripId, token) => {
     try {
