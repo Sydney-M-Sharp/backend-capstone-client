@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { createTrip } from '../../data/trips.js';
+import { updateTripByID } from '../../data/trips.js';
 import { useAppContext } from '../../context/state.jsx';
 import { getUsers } from '../../data/users.js';
 import { getTripByID}from '../../data/trips.js';
@@ -77,7 +77,7 @@ const EditTripForm = ({ onSubmit, error }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await createTrip(tripDetails, token);
+            await updateTripByID(tripId,tripDetails, token);
             navigate(`/my-trips`);
         } catch (error) {
             console.error(error.message);
