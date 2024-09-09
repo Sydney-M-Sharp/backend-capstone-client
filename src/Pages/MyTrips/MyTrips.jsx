@@ -15,7 +15,11 @@ const MyTrips = () => {
     useEffect(() => {
         const fetchTrips = async () => {
             if (userId && token) {
-                const data = await getTrips(userId, token);
+                let data = await getTrips(userId, token);
+
+                // Sort trips by start date (earliest first)
+                data.sort((a, b) => new Date(a.trip.start_date) - new Date(b.trip.start_date));
+
                 setTrips(data);
             }
         };
