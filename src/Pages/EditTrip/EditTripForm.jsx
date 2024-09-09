@@ -92,7 +92,7 @@ const EditTripForm = ({ onSubmit, error }) => {
         <div className='new-trip-page-container'>
             <header className='page-header'> <h1>Edit Trip</h1> </header>
             
-        <div className='create-trip-section-container'>
+        <div className='edit-trip-section-container'>
         <div className="create-trip-form">
             {error && <p>Error: {error}</p>}
             <form onSubmit={handleSubmit}>

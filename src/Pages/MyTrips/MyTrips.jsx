@@ -15,7 +15,11 @@ const MyTrips = () => {
     useEffect(() => {
         const fetchTrips = async () => {
             if (userId && token) {
-                const data = await getTrips(userId, token);
+                let data = await getTrips(userId, token);
+
+                // Sort trips by start date (earliest first)
+                data.sort((a, b) => new Date(a.trip.start_date) - new Date(b.trip.start_date));
+
                 setTrips(data);
             }
         };
@@ -60,13 +64,13 @@ const MyTrips = () => {
                                 <ul className="trip-details">
                                     <li>Start Date: {formatDate(trip.trip.start_date)}</li>
                                     <li>End Date: {formatDate(trip.trip.end_date)}</li>
+                                    </ul>
                                     {parseInt(trip.trip.user) === parseInt(userId) && (
-                                        <div className="trip-actions">
+                                        <div className="my-trip-button-section">
                                             <button onClick={() => handleEditClick(trip.trip.id)} className='edit-button>'>Edit</button>
                                             <button onClick={() => handleDeleteClick(trip.trip.id)} className="delete-button">Delete</button>
                                         </div>
                                     )}
-                                </ul>
                             </div>
                         </li>
                     ))}

@@ -54,7 +54,16 @@ textarea {
     background-color: #646cff;
 }
 
-/* Mobile-specific styles */
+.edit-trip-section-container {
+    background-color: #9dbbae; /* Green background */
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px; /* Padding inside the box */
+    width: 100%; /* Full width inside container */
+    max-width: 600px; /* Maximum width of the form box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better visibility */
+    margin-top: 4.5rem;
+}
+
 @media (max-width: 500px) {
     .section-container {
         padding: 15px; /* Adjust padding for smaller screens */
@@ -72,6 +81,22 @@ textarea {
         padding: 15px; /* Adjust padding for smaller screens */
         margin: 30px; /* Adjust margin for smaller screens */
         width: 90%; /* Width of the boxes for smaller screens */
+    }
+
+    .save-button {
+        padding: 0.5em 1em; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .section-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin: 30px; /* Adjust margin for smaller screens */
+        width: 90%; /* Width of the boxes for smaller screens */
+    }
+    
+    .edit-trip-section-container {
+        margin-top: 2rem; ;
     }
 
     .save-button {
