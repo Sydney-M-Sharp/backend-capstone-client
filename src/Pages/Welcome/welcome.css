@@ -13,6 +13,8 @@
 .welcome-info{
   font-size: large;
   font-family: "Fredericka the Great", serif;
+  padding-bottom: .5rem;
+  margin-top: -1rem;
 
   
 }
