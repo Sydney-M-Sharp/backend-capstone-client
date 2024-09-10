@@ -1,14 +1,4 @@
 
-.section-container {
-  background-color: #9dbbae; /* Green background */
-  border-radius: 15px; /* Rounded edges */
-  padding: 20px; /* Padding inside the box */
-  margin: 20px; /* White space around the box */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better visibility */
-  width: 80%; /* Width of the boxes */
-  max-width: 400px; /* Maximum width of the boxes */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
 
 /* Ensure all input fields are the same width */
 .input {
@@ -20,27 +10,20 @@
   margin-top: 1rem;
 }
 
+.welcome-info{
+  font-size: large;
+  font-family: "Fredericka the Great", serif;
+
+  
+}
 
 /* Mobile-specific styles */
 @media (max-width: 500px) {
-  .section-container {
-    padding: 15px; /* Adjust padding for smaller screens */
-    margin: 30px; /* Adjust margin for smaller screens */
-    width: 90%; /* Width of the boxes for smaller screens */
-  }
+
   h3 {
     margin-top: auto;
   }
-  .section-container {
-    background-color: #9dbbae; /* Green background */
-    border-radius: 15px; /* Rounded edges */
-    padding: 20px; /* Padding inside the box */
-    margin: 20px; /* White space around the box */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better visibility */
-    width: 80%; /* Width of the boxes */
-    max-width: 400px; /* Maximum width of the boxes */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  }
+  
   .section-container-for-message{
     background-color: #9dbbae; 
     border-radius: 15px; 
@@ -62,6 +45,6 @@
     width: 80%; 
     max-width: 400px; 
     box-sizing: border-box; 
-   
   }
+
 }

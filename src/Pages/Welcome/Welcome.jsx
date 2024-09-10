@@ -10,17 +10,17 @@ function Welcome() {
         {/* Navigation content */}
       </nav>
       <header className='page-header'>
-        <h1>Welcome to Socii</h1>
-        <div>Let's Start Planning Your Next Adventure</div>
+        <h1 class="title-welcome">Welcome to Socii</h1>
+        <div class="welcome-info">Let's Start Planning Your Next Adventure</div>
       </header>
       
         <div className="page-container">
-        <div className="section-container-for-message">
+        {/* <div className="section-container-for-message">
         With Socii you can to plan trips with others in one convenient app. We can't wait to see where you go next!
         </div>
         <div className="section-container-for-messages">
         Please log in or register below to continue
-        </div>
+        </div> */}
           <Login />
           <Register />
         </div>
