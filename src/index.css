@@ -10,7 +10,7 @@
 
   /* color-scheme: light dark; */
   color: rgba(255, 255, 255, 0.87);
-  background-color: #F8F8F8;
+  background-color: #f8f4f4;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -41,6 +41,7 @@ body {
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
+
   
   
 }
@@ -49,6 +50,18 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  
+}
+
+.section-container{
+    background-color: #9dbbae; /* Green background */
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px; /* Padding inside the box */
+    margin: 20px; /* White space around the box */
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    max-width: 450px; /* Maximum width of the boxes */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 80%; 
   
 }
 
@@ -87,6 +100,18 @@ button:focus,
 button:focus-visible {
   outline: 6px auto -webkit-focus-ring-color;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -156,22 +181,32 @@ button:focus-visible {
     width: 100%;
     padding: 1rem; /* Add padding to ensure there's space around the boxes */
   }
-  /* .page-container {
+  .page-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    margin-top: 5rem;
+    margin-top: 6rem;
   
-  } */
+  }
+  .title-welcome{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: "Passion One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+  }
+
   .title{
     text-decoration: none;
     color: #3e5a6c;
     font-weight: bold;
     font-family: "Passion One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: x-large;
+    font-weight: 400;
+    font-style: normal;
+    font-size: x-large;
   }
   .page-header {
     background-color: #547258; 

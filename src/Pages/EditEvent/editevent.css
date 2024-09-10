@@ -1,14 +1,6 @@
 /* editevent.css */
 
-/* Style for the form container */
-.section-container {
-    background-color: #9dbbae; 
-    border-radius: 15px; 
-    padding: 20px; 
-    width: 100%; 
-    max-width: 600px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-}
+
 .edit-section-container {
     background-color: #9dbbae; 
     border-radius: 15px; 
@@ -88,11 +80,11 @@ textarea {
     }
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .section-container {
-        padding: 15px; /* Adjust padding for smaller screens */
-        margin: 30px; /* Adjust margin for smaller screens */
-        width: 90%; /* Width of the boxes for smaller screens */
+        padding: 15px; 
+        margin: 30px; 
+        width: 90%; 
     }
     
     .edit-trip-section-container {
@@ -100,6 +92,6 @@ textarea {
     }
 
     .save-button {
-        padding: 0.5em 1em; /* Adjust padding for smaller screens */
+        padding: 0.5em 1em; 
     }
-}
+} */
