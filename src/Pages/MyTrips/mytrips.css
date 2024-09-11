@@ -66,7 +66,7 @@
         padding: 20px; /* Padding inside the box */
         margin: 20px; /* White space around the box */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better visibility */
-        width: 80%; /* Width of the boxes */
+        width: 90%; /* Width of the boxes */
         max-width: 600px; /* Maximum width of the boxes */
         box-sizing: border-box; /* Include padding and border in the element's total width and height */
     }
@@ -75,7 +75,7 @@
         list-style-type: none;
         padding: 0;
         margin: 0;
-        margin-left: 1.5rem;
+        
         margin-bottom: 4rem;
     }
 }
