@@ -47,16 +47,16 @@ const MyTrips = () => {
     };
 
     return (
-        <div className="page-container">
+        <div>
             <header className='page-header'>
-                <h1>My Trips</h1>
+                <h1 className='page-header-title'>My Trips</h1>
             </header>
-            
+            <div className="page-container">
             {trips.length > 0 ? (
                 <ul className="trips-list">
                     {trips.map(trip => (
-                        <li key={trip.trip.id} className="trip-item">
-                            <div className="trip-box">
+                        <li key={trip.trip.id} className="trip-box">
+                            <div className="trip-item">
                                 <Link to={`/trip-details/${trip.trip.id}`} className="trip-link">
                                     {trip.trip.location}
                                     {console.log("this is the person who made the trip", trip.trip.user, "and this is the current user", userId)}
@@ -78,6 +78,7 @@ const MyTrips = () => {
             ) : (
                 <p className='no-trips-found'>No trips found</p>
             )}
+            </div>
         </div>
     );
 };
