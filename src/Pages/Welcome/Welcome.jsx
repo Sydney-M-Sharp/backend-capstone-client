@@ -6,13 +6,11 @@ import Register from './SignUp';
 function Welcome() {
   return (
     <div>
-      <nav>
-        {/* Navigation content */}
-      </nav>
-      <header className='page-header'>
-        <h1 class="title-welcome">Welcome to Socii</h1>
+    
+      <div className='page-header'>
+        <h1 class='page-header-title'>Welcome to Socii</h1>
         <div class="welcome-info">Let's Plan Your Next Adventure</div>
-      </header>
+      </div>
       
         <div className="page-container">
         {/* <div className="section-container-for-message">

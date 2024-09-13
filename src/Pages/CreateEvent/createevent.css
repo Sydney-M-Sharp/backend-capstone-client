@@ -97,16 +97,16 @@
     
 }
 /* Mobile-specific styles */
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
     .create-trip-container {
-        padding: 15px; /* Adjust padding for smaller screens */
-        width: 90%; /* Width of the box for smaller screens */
+        padding: 15px; 
+        width: 90%; 
     }
 }
 
 @media (max-width: 320px) {
     .create-trip-container {
-        padding: 15px; /* Adjust padding for smaller screens */
-        margin: 15px; /* Adjust margin for smaller screens */
+        padding: 15px; 
+        margin: 15px; 
     }
-}
+} */
