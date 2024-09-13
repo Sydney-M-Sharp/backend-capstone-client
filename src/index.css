@@ -3,10 +3,10 @@
   line-height: 1.5;
   font-weight: 400; */
 
-    font-family: "Fredericka the Great", serif;
-    font-weight: 400;
-    font-style: normal;
-  
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+
 
   /* color-scheme: light dark; */
   color: rgba(255, 255, 255, 0.87);
@@ -19,6 +19,7 @@
 
 
 }
+
 .passion-one-regular {
   font-family: "Passion One", sans-serif;
   font-weight: 400;
@@ -31,6 +32,7 @@ a {
   text-decoration: inherit;
   outline: 0;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -42,43 +44,49 @@ body {
   width: 100%;
   box-sizing: border-box;
 
-  
-  
+
+
 }
 
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  
+
 }
 
-.section-container{
-    background-color: #9dbbae; /* Green background */
-    border-radius: 15px; /* Rounded edges */
-    padding: 20px; /* Padding inside the box */
-    margin: 20px; /* White space around the box */
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    max-width: 450px; /* Maximum width of the boxes */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    width: 80%; 
-  
+.section-container {
+  background-color: #9dbbae;
+  /* Green background */
+  border-radius: 15px;
+  /* Rounded edges */
+  padding: 20px;
+  /* Padding inside the box */
+  margin: 20px;
+  /* White space around the box */
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  max-width: 450px;
+  /* Maximum width of the boxes */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+  width: 80%;
+
 }
 
 /* TODO: come back to this. This is where the colors are being set for input */
 input,
 textarea {
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #86a2a9;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #86a2a9;
 }
 
 input:focus,
 input:focus-visible {
-    border: 1px solid #9a9ff8 !important;
-    outline: none;
+  border: 1px solid #9a9ff8 !important;
+  outline: none;
 }
 
 button {
@@ -93,9 +101,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #415866;
 }
+
 button:focus,
 button:focus-visible {
   outline: 6px auto -webkit-focus-ring-color;
@@ -118,9 +128,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
@@ -128,7 +140,7 @@ button:focus-visible {
 
 
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .page-header {
     padding: 2px;
     margin-bottom: 4rem;
@@ -138,20 +150,20 @@ button:focus-visible {
     font-size: .5cm;
   }
 
-    /* Ensure all items start after the page header */
+    
   main {
-    margin-top: 80px; /* Adjust this value to match the height of the header */
+    margin-top: 80px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 1rem; /* Add padding to ensure there's space around the boxes */
+    padding: 1rem; 
   }
   .page-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Stack the sections vertically */
+    flex-direction: column; 
     margin-top: 4.5rem;
   }
   
@@ -160,65 +172,64 @@ button:focus-visible {
     background-color: #547258; 
     border-bottom-left-radius: 30px; 
     border-bottom-right-radius: 30px; 
-    color: white; /* Text color */
+    color: white; 
     text-align: center;
     position: fixed;
     width: 100%;
-    left: 0; /* Ensure it aligns with the left edge */
-    right: 0; /* Ensure it aligns with the right edge */
+    left: 0; 
+    right: 0;
     top: 0;
     z-index: 1000;
-    box-sizing: border-box; /* Ensure padding and borders are included in the width */
+    box-sizing: border-box; 
   }
+} */
+
+/* Ensure all items start after the page header */
+main {
+  margin-top: 80px;
+  /* Adjust this value to match the height of the header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  /* Add padding to ensure there's space around the boxes */
 }
 
-  /* Ensure all items start after the page header */
-  main {
-    margin-top: 80px; /* Adjust this value to match the height of the header */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 1rem; /* Add padding to ensure there's space around the boxes */
-  }
-  .page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-    margin-top: 6rem;
-  
-  }
-  .title-welcome{
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    font-family: "Passion One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: xx-large;
-  }
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 6rem;
 
-  .title{
-    text-decoration: none;
-    color: #3e5a6c;
-    font-weight: bold;
-    font-family: "Passion One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: x-large;
-  }
-  .page-header {
-    background-color: #547258; 
-    border-bottom-left-radius: 30px; 
-    border-bottom-right-radius: 30px; 
-    color: white; /* Text color */
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    left: 0; /* Ensure it aligns with the left edge */
-    right: 0; /* Ensure it aligns with the right edge */
-    top: 0;
-    z-index: 1000;
-    box-sizing: border-box; /* Ensure padding and borders are included in the width */
-  }
+}
+
+.page-header-title {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Passion One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+}
+
+.page-header {
+  background-color: #547258;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  color: white;
+  /* Text color */
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  /* Ensure it aligns with the left edge */
+  right: 0;
+  /* Ensure it aligns with the right edge */
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  /* Ensure padding and borders are included in the width */
+}

@@ -20,7 +20,7 @@
 }
 
 /* Mobile-specific styles */
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
 
   h3 {
     margin-top: auto;
@@ -49,4 +49,4 @@
     box-sizing: border-box; 
   }
 
-}
+} */
