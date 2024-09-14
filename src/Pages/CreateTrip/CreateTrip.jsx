@@ -20,10 +20,12 @@ const CreateTrip = () => {
     };
 
     return (
-        <div className="new-trip-page-container">
-            <header className='page-header'> <h1>Create New Trip</h1> </header>
+        <div>
+            <header className='page-header'> <h1 className='page-header-title'>Create New Trip</h1> </header>
+            <div className='page-container'>
             <div className="create-trip-section-container">
                 <CreateTripForm onSubmit={handleSubmit} error={error} />
+            </div>
             </div>
         </div>
     );
