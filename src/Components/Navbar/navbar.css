@@ -19,16 +19,15 @@
   transition: opacity 0.3s ease; /* Smooth transition for visibility change */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.357); 
 }
-
-/* Hide the navbar when logged out */
-.navbar.hidden {
-  display: none; /* Hide the navbar */
-}
-
 /* Ensure navbar items are centered and styled as buttons */
 .navbar-container {
   display: flex;
   gap: 1rem; /* Space between buttons */
+}
+
+/* Hide the navbar when logged out */
+.navbar.hidden {
+  display: none; /* Hide the navbar */
 }
 
 /* Inherit styles from index.css for buttons */
@@ -36,22 +35,21 @@
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
   color: rgba(255, 255, 255, 0.87);
   font-weight: 500;
   font-family: inherit;
   background-color: #6c93a9;
   cursor: pointer;
   transition: border-color 0.25s;
-  flex-grow: ;
-
-  /* text-decoration: none;
+  text-decoration: none;
   color: #ffffff;
-  font-family: "Passion One", sans-serif;
-  font-weight: 400;
+  font-family: sans-serif;
+  font-weight: 600;
   font-style: normal;
-  font-size: 3.2em;
-  line-height: 1; */
+  font-size: 1rem;
+  /* font-size: .6rem; */
+  line-height: 1;
+  min-width: 58.616px;
 }
 
 /* Inherit styles from index.css for button hover and focus */
